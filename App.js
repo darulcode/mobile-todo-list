@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { CheckBox } from 'react-native-elements';
 import { useState } from 'react';
@@ -30,6 +30,7 @@ export default function App() {
   return (
       <SafeAreaView style={styles.container}>
         <StatusBar style="light" />
+
         <View style={styles.heading}>
           <Text style={[styles.h1]}>Hello,</Text>
           <Text style={[styles.h1, styles.bold]}>A Darul Ilmi</Text>
@@ -56,6 +57,7 @@ export default function App() {
             <Text style={styles.buttonText}>+</Text>
           </TouchableOpacity>
         </View>
+        <ScrollView  indicatorStyle={"white"}>
         <View style={styles.taskList}>
           <Text style={styles.title}>Today's Task</Text>
           {tasks.map((task, index) => (
@@ -80,6 +82,7 @@ export default function App() {
               </View>
           ))}
         </View>
+        </ScrollView>
       </SafeAreaView>
   );
 }
